@@ -1,7 +1,9 @@
 package com.company;
 
 import java.io.*;
-import java.util.concurrent.ScheduledExecutorService;
+import java.lang.Object;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * Created by Marin on 06.02.2017.
@@ -9,34 +11,92 @@ import java.util.concurrent.ScheduledExecutorService;
 public class CsvVerarbeiten {
 
     private String src;
-    private Schueler[] schueler;
-
     public void readCsv(String src) {
 
-        {
-
+        Scanner sc = null;
             try{
-            StreamTokenizer st = new StreamTokenizer(new InputStreamReader(new BufferedInputStream(new FileInputStream(new File(src)))));
+                String[] s=new String[128];
+                int i =0;
+
+                sc =new Scanner(new BufferedReader(new FileReader(new File(src))));
+                sc.useDelimiter(";");
+                ArrayList<String> al =new ArrayList<String>();
+               while(sc.hasNext()) {
+                   if (sc.hasNext()) {
+                       s[i] = sc.next();
+                       al.add(s[i]);
+                       System.out.println(s[i]);
+                       i++;
+
+                   }
+
+                   if (sc.hasNext()) {
+                       s[i] = sc.next();
+                       System.out.println(s[i]);
+                       i++;
+                   }
+
+                   if (sc.hasNext()) {
+                       s[i] = sc.next();
+                       al.add(s[i]);
+                       System.out.println(s[i]);
+                       i++;
+                   }
+
+                   if (sc.hasNext()) {
+                       s[i] = sc.next();
+                       al.add(s[i]);
+                       System.out.println(s[i]);
+                       i++;
+                   }
+
+                   if (sc.hasNext()) {
+                       s[i] = sc.next();
+                       al.add(s[i]);
+                       System.out.println(s[i]);
+                       i++;
+                   }
+                   if (sc.hasNext()) {
+                       s[i] = sc.next();
+                       al.add(s[i]);
+                       System.out.println(s[i]);
+                       i++;
+                   }
+
+                   if (sc.hasNext()) {
+                       s[i] = sc.next();
+                       al.add(s[i]);
+                       System.out.println(s[i]);
+                       i++;
+                   }
+
+                   if (sc.hasNext()) {
+                       s[i] = sc.next();
+                       al.add(s[i]);
+                       System.out.println(s[i]);
+                       i++;
+                   }
+
+               }
 
 
-                do{
-                    st.nextToken();
-                    String s =st.sval;
-                    String s1=st.sval;
-                }
-                while(st.ttype != StreamTokenizer.TT_EOF);
 
             }catch(FileNotFoundException e){
                 e.printStackTrace();
-
             }catch(IOException e) {
                 e.printStackTrace();
-            }finally{
+            }catch (NullPointerException e)
+                {
+                    e.printStackTrace();
+                }
+
+            finally {
                 try{
-                    st.close;
+                    sc.close();
+                }catch (NullPointerException e)
+                {
+                    e.printStackTrace();
                 }
             }
-
     }
-    public void
 }
