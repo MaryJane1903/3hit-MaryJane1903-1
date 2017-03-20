@@ -6,6 +6,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Pattern.matches()
+        Patternuebung p1 = new Patternuebung();
+        p1.patternAusgabeip("255.255.255.255");
+        p1.patternAusgabeemail("marin.antunovic@hotmail.com");
     }
 }
