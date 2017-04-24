@@ -26,7 +26,15 @@ public class Patternuebung {
 
     public void patternAusgabeemail(String email)
     {
+        String s="(\\w*.\\w*@\\w*.\\w{2,3})";
 
+        if(email.matches(s)){
+
+            System.out.println("richtig");
+        }else{
+            System.out.println("falsch");
+        }
     }
+
 
 }

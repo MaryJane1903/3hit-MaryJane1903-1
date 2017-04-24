@@ -8,6 +8,6 @@ public class Main {
 
         Patternuebung p1 = new Patternuebung();
         p1.patternAusgabeip("255.255.255.255");
-        p1.patternAusgabeemail("marin.antunovic@hotmail.com");
+        p1.patternAusgabeemail("marin.antunovic@hotmail.de");
     }
 }

@@ -1,10 +1,12 @@
 package com.company;
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
+import javafx.scene.shape.Rectangle;
+import javafx.stage.*;
 
 public class Main extends Application{
 
@@ -19,13 +21,19 @@ public class Main extends Application{
         primaryStage.setTitle("Stage mit Button");
 
         Group root = new Group(new Button("Hello"));
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(root, 300, 100);
         primaryStage.setScene(scene);
+        primaryStage.initStyle(StageStyle.DECORATED);
+        primaryStage.initModality(Modality.WINDOW_MODAL);
+        primaryStage.initOwner(null);
+        primaryStage.show();
+        Rectangle2D bounds= Screen.getPrimary().getVisualBounds();
+        double x=bounds.getMinX()+(bounds.getWidth()- primaryStage.getWidth())/2.0;
+        double y=bounds.getMinY()+(bounds.getHeight()-primaryStage.getHeight())/2.0;
 
         primaryStage.sizeToScene();
-        primaryStage.setX(0);
-        primaryStage.setY(0);
-        primaryStage.show();
+        primaryStage.setX(x);
+        primaryStage.setY(y);
 
     }
 }
